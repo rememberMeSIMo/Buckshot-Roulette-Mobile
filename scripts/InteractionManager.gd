@@ -22,7 +22,11 @@ func _process(delta):
 	pass
 
 func _input(event):
+	# Mouse left click
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		MainInteractionEvent()
+	# Single finger tap on mobile
+	elif event is InputEventScreenTouch and event.pressed:
 		MainInteractionEvent()
 
 func MainInteractionEvent():
